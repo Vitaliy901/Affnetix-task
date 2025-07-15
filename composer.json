@@ -1,7 +1,7 @@
 {
     "name": "affnetix/affnetix-task",
     "description": "Parsing information from the trustpilot.com",
-    "type": "project",
+    "type": "parser",
     "license": "MIT",
     "require": {
         "php": ">=8.3.23",

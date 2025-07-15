@@ -1,13 +1,9 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-use App\DTO\CommentDTO;
+use App\Commands\Command;
 
-$comment = new CommentDTO(
-    'userName', 'amountReviews','rate',
-    'header', 'content', 'date',
-    'dateExperience' , 'country');
-
-var_dump($comment);
+$command = new Command();
+$command->run();
 
 ?>
