@@ -18,6 +18,12 @@ class Extract
     {
         $response = $this->client->request('GET', $url);
         $statusCode = $response->getStatusCode();
-        return $statusCode;
+        
+        if ($statusCode === 200) {
+            $body = $response->getBody()->getContents();
+            return $body;
+        } else {
+            throw new \Exception("Failed to fetch data from URL: $url, Status Code: $statusCode");
+        }
     }
 }
