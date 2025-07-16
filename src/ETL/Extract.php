@@ -8,13 +8,13 @@ class Extract
 {
     private object $client;
 
-    private function __construct(
+    public function __construct(
     )
     {
         $this->client = new Client();
     }
 
-    public static function get(string $url)
+    public function get(string $url)
     {
         $response = $this->client->request('GET', $url);
         $statusCode = $response->getStatusCode();
