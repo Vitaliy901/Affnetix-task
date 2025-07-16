@@ -20,19 +20,18 @@ class Command implements CommandInterface
     public function __construct() {
     }
 
-    public function run()
+        public function run()
     {
-      if (!empty($this->links)
-      {
-          foreach ($this->links as $link) {
-              $this->DTO[] = $Extract::get($link);
-          }
-      }
 
-      if (!empty($this->DTO)
-      {
-          // $new Transform($this->DTO);
-      }
+        if (!empty($this->links))
+        {
+            foreach ($this->links as $link) {
+                $this->DTO[] = Extract::get($link);
+            }
+        }
 
+        if (!empty($this->DTO)) {
+            // $new Transform($this->DTO);
+        }
     }
 }
