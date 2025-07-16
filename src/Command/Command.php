@@ -27,7 +27,7 @@ class Command implements CommandInterface
         {
             foreach ($this->links as $link) {
                 $extract = new Extract;
-                echo $extract->get($link);
+                var_dump($extract->get($link));
                 exit;
             }
         }

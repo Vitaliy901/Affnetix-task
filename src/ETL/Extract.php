@@ -18,10 +18,11 @@ class Extract
     {
         $response = $this->client->request('GET', $url);
         $statusCode = $response->getStatusCode();
-        
+
         if ($statusCode === 200) {
             $body = $response->getBody()->getContents();
-            return $body;
+            preg_match('/"author"\s*:\s*{[^}]*"name"\s*:\s*"([^"]+)"/', $body, $matches);
+            return $matches;
         } else {
             throw new \Exception("Failed to fetch data from URL: $url, Status Code: $statusCode");
         }
