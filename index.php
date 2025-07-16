@@ -1,7 +1,10 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-use App\Commands\Command;
+use App\Command\Command;
+
+error_reporting(E_ALL);
+ini_set('error_reporting', 'on');
 
 $command = new Command();
 $command->run();
