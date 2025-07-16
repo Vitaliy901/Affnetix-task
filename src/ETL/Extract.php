@@ -1,4 +1,5 @@
 <?php
+
 namespace App\ETL;
 
 use GuzzleHttp\Client;
@@ -7,17 +8,16 @@ class Extract
 {
     private object $client;
 
-    public function __construct(
+    private function __construct(
     )
     {
-        $this->client = new GuzzleHttp\Client([
-          'allow_redirects' => false
-        ]);
+        $this->client = new Client();
     }
 
     public static function get(string $url)
     {
         $response = $this->client->request('GET', $url);
         $statusCode = $response->getStatusCode();
+        return $statusCode;
     }
 }
